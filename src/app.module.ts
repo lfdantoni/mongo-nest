@@ -6,7 +6,7 @@ import { mongo } from 'config';
 import { CatModule } from './cat/cat.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(mongo.uri), CatModule],
+  imports: [MongooseModule.forRoot(process.env.MONGODB_URI || mongo.uri), CatModule],
   controllers: [AppController],
   providers: [AppService],
 })
