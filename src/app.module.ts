@@ -3,9 +3,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { mongo } from 'config';
-import { CatModule } from './cat/cat.module';
+import { DataEventModule } from './data-event/data-event.module';
 @Module({
-  imports: [MongooseModule.forRoot(process.env.MONGODB_URI || mongo.uri), CatModule],
+  imports: [MongooseModule.forRoot(process.env.MONGODB_URI || mongo.uri), DataEventModule],
   controllers: [AppController],
   providers: [AppService],
 })
