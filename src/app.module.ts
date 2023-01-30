@@ -4,10 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { mongo } from 'config';
 import { CatModule } from './cat/cat.module';
-
-console.log(process.env.MONGODB_URI, '  ', mongo)
 @Module({
-  imports: [MongooseModule.forRoot(mongo.uri), CatModule],
+  imports: [MongooseModule.forRoot(process.env.MONGODB_URI || mongo.uri), CatModule],
   controllers: [AppController],
   providers: [AppService],
 })
