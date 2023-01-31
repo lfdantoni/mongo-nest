@@ -6,7 +6,7 @@ import { DataEventService } from './data-event.service';
 export class CatController {
   constructor(private readonly dataEventService: DataEventService) {}
 
-  @Post('/create')
+  @Post('/createV2')
   createCat(@Body() event: any, @Req() req: Request): any {
     console.log(event)
 
