@@ -20,7 +20,7 @@ export class CatController {
       console.log('Headers: ')
       console.dir(req.headers)
       console.log(`Body: ${body}`)
-      await this.dataEventService.create(body);
+      await this.dataEventService.create(JSON.parse(body));
 
     })
 
